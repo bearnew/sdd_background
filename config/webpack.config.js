@@ -1,10 +1,11 @@
-import path from 'path'
-import CleanWebpackPlugin from 'clean-webpack-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-export default {
-  context: __dirname,
+console.log(__dirname, __filename, process.cwd())
+module.exports = {
+  context: path.resolve(process.cwd()),
   output: {
     path: path.resolve('./dist'),
     filename: '[name].js',
@@ -12,7 +13,7 @@ export default {
 
   resolve: {
     alias: {
-
+      
     },
     extensions: ['.ts', '.tsx'],
   },
@@ -35,6 +36,11 @@ export default {
         test: /\.tsx?$/,
         use: 'ts-loader',
       },
+      {
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader'
+      }
     ],
   },
 

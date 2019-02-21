@@ -5,12 +5,12 @@ import {
     computed
 } from 'mobx';
 
-interface Todo {
+export interface Todo {
     task: string,
     isComplete: boolean
 }
 
-class TodoStore {
+export class TodoStore {
     @observable
     todoList: Todo[] = []
 
@@ -41,4 +41,4 @@ class TodoStore {
     }
 }
 
-export const todoStore = new TodoStore() 
+export const todoStore = new TodoStore();
