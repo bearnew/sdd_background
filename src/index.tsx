@@ -6,7 +6,7 @@ import { TodoAdd } from './todo.add';
 import { TodoList } from './todo.list'
 
 export class App extends Component {
-  private todoStore: todoStore = new TodoStore()
+  private todoStore: TodoStore
 
   render() {
     return (
@@ -19,5 +19,3 @@ export class App extends Component {
     )
   }
 }
-
-
