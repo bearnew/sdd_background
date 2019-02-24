@@ -9,9 +9,6 @@
       "target": "es5",
       "jsx": "react",
       "allowJs": true,
-      "baseUrl": "src",
-      "paths": {
-        "store": ["store"]
-      }
+      "baseUrl": "src"
     }
   }

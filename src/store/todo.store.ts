@@ -12,7 +12,13 @@ export interface Todo {
 
 export class TodoStore {
     @observable
-    todoList: Todo[] = []
+    todoList: Todo[] = [{
+        task: 'chinese',
+        isComplete: true
+    }, {
+        task: 'math',
+        isComplete: false
+    }]
 
     constructor() {
         reaction(

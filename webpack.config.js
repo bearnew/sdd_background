@@ -1,6 +1,7 @@
 const path = require('path');
 const HappyPack = require('happypack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const npm_package = require('./package.json')
 // 并行压缩js
 const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 const HtmlWebpackPluginConfig = {
@@ -14,10 +15,8 @@ const HtmlWebpackPluginConfig = {
     inject: true
 }
 
-console.log(__dirname)
-console.log(path.resolve(__dirname, 'dist'))
 module.exports = {
-    entry: './src/components/todo/index.tsx',
+    entry: './src/components/todo/main.tsx',
     mode: 'development',
     devtool: 'source-map',
     output: {
@@ -27,13 +26,13 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.scss', '.tsx', '.ts'],
-        // alias: {
-        //     pages: path.resolve(__dirname, 'src/pages'),
-        //     components: path.resolve(__dirname, 'src/components'),
-        //     routers: path.resolve(__dirname, 'src/routers'),
-        //     store: path.resolve(__dirname, 'src/store'),
-        //     utils: path.resolve(__dirname, 'src/utils')
-        // }
+        alias: {
+            pages: path.resolve(__dirname, 'src/pages/'),
+            components: path.resolve(__dirname, 'src/components/'),
+            routers: path.resolve(__dirname, 'src/routers/'),
+            store: path.resolve(__dirname, 'src/store/'),
+            utils: path.resolve(__dirname, 'src/utils/')
+        }
     },
     module: {
         rules: [

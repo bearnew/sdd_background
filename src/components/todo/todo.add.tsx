@@ -19,6 +19,7 @@ export class TodoAdd extends Component<TodoAddProps> {
   }
 
   handleAddTodo = () => {
+    console.log('1111', this.props.todoStore.addTodo)
     this.props.todoStore.addTodo(this.task)
     this.task = ''
   }
