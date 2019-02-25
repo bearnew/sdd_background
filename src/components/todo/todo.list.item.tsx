@@ -5,4 +5,7 @@ interface TodoListItemProps {
   todo: Todo
 }
 
-export const TodoListItem = ({ todo }: TodoListItemProps) => <div>{todo.task}</div>
+export const TodoListItem = ({ todo }: TodoListItemProps) => {
+  console.log('item item', todo)
+  return <div>{todo.task}</div>
+}

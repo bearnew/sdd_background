@@ -38,7 +38,9 @@ export class TodoStore {
 
     @action
     addTodo(task: string) {
+        console.log('add', task)
         this.todoList.push({ task, isComplete: false })
+        console.log('list', this.todoList)
     }
 
     @action
