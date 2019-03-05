@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { testA } from '../../utils/format';
-import Picker from '../../components/picker/index';
+import { testA } from 'utils/format';
+import Picker from 'components/picker/index';
 
-export default class Home extends Component {
+export default class Home extends React.Component {
     componentDidMount() {
         testA();
     }
@@ -19,6 +19,6 @@ export default class Home extends Component {
                     <div className="border"></div>
                 </div>
             </div>
-        )
+        );
     }
 }

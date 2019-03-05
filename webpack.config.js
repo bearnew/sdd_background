@@ -16,7 +16,7 @@ const HtmlWebpackPluginConfig = {
 }
 
 module.exports = {
-    entry: './src/components/todo/main.tsx',
+    entry: './src/main.tsx',
     mode: 'development',
     devtool: 'source-map',
     output: {
