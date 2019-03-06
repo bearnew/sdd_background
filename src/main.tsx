@@ -1,13 +1,16 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Provider } from 'mobx-react';
-import Router from 'routers/index';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
+import { LocaleProvider } from "antd";
+import zhCN from "antd/lib/locale-provider/zh_CN";
+import Router from "routers/index";
+import "common/assets/iconfont.js";
+import "common/style/common.pcss";
 
 // render react DOM
 ReactDOM.render(
-  <div>
-      <h1>this is sdd community group purchase.</h1>
-      <Router />
-  </div>,
-  document.getElementById('root')
+    <LocaleProvider locale={zhCN}>
+        <Router />
+    </LocaleProvider>,
+    document.getElementById("root")
 );
