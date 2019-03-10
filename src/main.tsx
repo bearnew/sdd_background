@@ -4,7 +4,7 @@ import { Provider } from "mobx-react";
 import { LocaleProvider } from "antd";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import Router from "routers/index";
-import "common/assets/iconfont.js";
+import "common/icon/iconfont.js";
 import "common/style/common.pcss";
 
 // render react DOM

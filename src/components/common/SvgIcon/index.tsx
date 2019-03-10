@@ -10,7 +10,7 @@ export default function SvgIcon(props: SvgIconProps) {
     const { type, color, size } = props;
     return (
         <svg className="icon" style={{ color: color, fontSize: size }}>
-            <use xlinkHref={`#icon${type}`} href={`#icon${type}`} />
+            <use xlinkHref={type} href={`#${type}`} />
         </svg>
     );
 }
