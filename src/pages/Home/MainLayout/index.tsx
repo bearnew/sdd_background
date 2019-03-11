@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Layout, Breadcrumb } from "antd";
 import SvgIcon from "components/common/SvgIcon/index";
+import Chart from './Chart/index';
 import './style.pcss';
 
 const { Header, Content, Footer } = Layout;
@@ -83,6 +84,7 @@ export default class AsideMenu extends React.Component<any, overviewListState> {
                             ))
                         }
                     </div>
+                    <Chart />
                 </Content>
                 <Footer tagName="footer" style={{ textAlign: "center" }}>
                     Ant Design ©2018 Created by Ant UED
