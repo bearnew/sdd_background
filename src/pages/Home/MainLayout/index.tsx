@@ -2,6 +2,8 @@ import * as React from "react";
 import { Layout, Breadcrumb } from "antd";
 import SvgIcon from "components/common/SvgIcon/index";
 import Chart from './Chart/index';
+import Statistics from './Statistics/index';
+import overviewStore from 'store/home/overview.store';
 import './style.pcss';
 
 const { Header, Content, Footer } = Layout;
@@ -20,50 +22,7 @@ interface overviewListState {
 
 export default class AsideMenu extends React.Component<any, overviewListState> {
     state = {
-        overviewList: [
-            {
-                icon: 'icon27',
-                iconColor: '#27A9E3',
-                text: '用户数量',
-                count: 0,
-                unit: '人'
-            },
-            {
-                icon: 'iconfenzucopy',
-                iconColor: '#28B779',
-                text: '团长数量',
-                count: 0,
-                unit: '人'
-            },
-            {
-                icon: 'iconicon-',
-                iconColor: '#FFB748',
-                text: '订单数量',
-                count: 0,
-                unit: '笔'
-            },
-            {
-                icon: 'iconyingyee',
-                iconColor: '#DA552A',
-                text: '平台营业',
-                count: 0,
-                unit: '元'
-            },
-            {
-                icon: 'icontuikuan',
-                iconColor: '#2255A4',
-                text: '平台退款',
-                count: 0,
-                unit: '元'
-            },
-            {
-                icon: 'iconyongjin',
-                iconColor: '#F4516C',
-                text: '订单佣金',
-                count: 0,
-                unit: '元'
-            }
-        ]
+        overviewList: overviewStore.overviewList
     }
     render() {
         const { overviewList } = this.state;
@@ -85,10 +44,8 @@ export default class AsideMenu extends React.Component<any, overviewListState> {
                         }
                     </div>
                     <Chart />
+                    <Statistics />
                 </Content>
-                <Footer tagName="footer" style={{ textAlign: "center" }}>
-                    Ant Design ©2018 Created by Ant UED
-                </Footer>
             </Layout>
         );
     }
