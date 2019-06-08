@@ -111,7 +111,7 @@ module.exports = {
         // 是否启用 gzip 压缩
         // compress: true,
         // 监听的端口，省略的话则为8080
-        port: 9000,
+        port: 6666,
         // 源文件改变时，会自动刷新页面
         inline: true,
         // 终端输出的文件为彩色的
