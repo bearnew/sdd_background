@@ -48,23 +48,26 @@ export default class AsideMenu extends React.Component<any, MenuState> {
                 selectedKeys={[this.state.current]}
                 mode="inline"
             >
-                <Menu.Item key="0">概览</Menu.Item>
+                <Menu.Item>
+                    <Link to="/">概览</Link>
+                </Menu.Item>
                 {
                     menuList.map((item, index) => {
-                        return (<SubMenu
-                            key={index + 1}
-                            title={
-                                <span>
-                                    <SvgIcon type={item.icon} color="#F3F3F3" size={20} />
-                                    <span className="menu-text">{item.text}</span>
-                                </span>
-                            }
-                        >
-                            {
-                                item.subMenuList &&
-                                item.subMenuList.map(sub => <Menu.Item key={sub.text}><Link to="/headManagement">{sub.text}</Link></Menu.Item>)
-                            }
-                        </SubMenu>)
+                        return (
+                            <SubMenu
+                                key={index}
+                                title={
+                                    <span>
+                                        <SvgIcon type={item.icon} color="#F3F3F3" size={20} />
+                                        <span className="menu-text">{item.text}</span>
+                                    </span>
+                                }
+                            >
+                                {
+                                    item.subMenuList &&
+                                    item.subMenuList.map(sub => <Menu.Item key={sub.text}><Link to="/headManagement">{sub.text}</Link></Menu.Item>)
+                                }
+                            </SubMenu>)
                     })
                 }
             </Menu>
